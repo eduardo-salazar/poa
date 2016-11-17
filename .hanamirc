@@ -1,0 +1,4 @@
+project=poa
+architecture=container
+test=minitest
+template=erb
