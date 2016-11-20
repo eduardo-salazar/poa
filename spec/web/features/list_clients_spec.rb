@@ -1,7 +1,7 @@
 require 'features_helper'
 
 describe 'List clients' do
-  it 'displays list of clients on the page' do
+  it 'checks if there are at least two clients on the page' do
     visit '/clients'
 
     within '#clients' do

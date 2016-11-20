@@ -5,5 +5,3 @@
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 get '/clients', to: 'clients#index'
 root to: 'home#index'
-
-get '/clients', to: 'clients#index'

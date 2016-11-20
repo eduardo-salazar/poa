@@ -4,6 +4,6 @@ describe 'Visit Home' do
   it 'is successfull' do
     visit '/'
 
-    page.body.must_include('Welcome')
+    page.body.must_include('POA Tool')
   end
 end
