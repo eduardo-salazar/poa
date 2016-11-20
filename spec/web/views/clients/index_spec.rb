@@ -7,8 +7,8 @@ describe Web::Views::Clients::Index do
   let(:view)      { Web::Views::Clients::Index.new(template, exposures) }
   let(:rendered)  { view.render }
 
-  it 'exposes #clients' do
-    view.foo.must_equal exposures.fetch(:clients)
+  it "exposes #clients" do
+    view.clients.must_equal exposures.fetch(:clients)
   end
 
   describe 'when there are no clients' do
@@ -18,16 +18,19 @@ describe Web::Views::Clients::Index do
   end
 
   describe 'where there are clients' do
-    let(:book1){Client.new(name: 'Cliente 1', desc: 'Description Cliente 1', location: 'Managua')}
-    let(:book2){Client.new(name: 'Cliente 2', desc: 'Cliente 2', location: 'Esteli')}
-    let(:book3){Client.new(name: 'Cliente 3', desc: 'Cliente 3', location: 'Boaco')}
-    let(:book4){Client.new(name: 'Cliente 4', desc: 'Cliente 4', location: 'Matagalpa')}
-    let(:exposures) {Hash[books: [book1,book2,book3,book4]]}
+    let(:client1){Client.new(name: 'Cliente 1', desc: 'Description Cliente 1', location: 'Managua')}
+    let(:client2){Client.new(name: 'Cliente 2', desc: 'Cliente 2', location: 'Esteli')}
+    let(:client3){Client.new(name: 'Cliente 3', desc: 'Cliente 3', location: 'Boaco')}
+    let(:client4){Client.new(name: 'Cliente 4', desc: 'Cliente 4', location: 'Matagalpa')}
+    let(:exposures) {Hash[clients: [client1,client2,client3,client4]]}
 
-    it 'list all clients' do
-      rendered.scan(/class='client').count.must_equal 4
-      redenred.must_include('Client1')
-      redenred.must_include('Description Cliente 1')
+    it 'list four clients' do
+      rendered.scan(/class='client'/).count.must_equal 4
+    end
+
+    it 'check name and desc' do
+      rendered.must_include('Cliente 1')
+      rendered.must_include('Description Cliente 1')
     end
 
     it 'hides the placeholder message' do
