@@ -334,9 +334,13 @@ module Web
         #
         # See: http://hanamirb.org/guides/assets/content-delivery-network
         #
-        # scheme 'https'
-        # host   'cdn.example.org'
-        # port   443
+        scheme 'https'
+        host   'maxcdn.bootstrapcdn.com'
+        port   443
+
+        scheme 'https'
+        host   'ajax.googleapis.com'
+        port   443
 
         # Subresource Integrity
         #
