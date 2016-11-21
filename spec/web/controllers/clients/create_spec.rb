@@ -16,7 +16,7 @@ describe Web::Controllers::Clients::Create do
     action.client.name.must_equal params[:client][:name]
   end
 
-  it 'redirects the user to the books listing' do
+  it 'redirects the user to the clients listing' do
     response = action.call(params)
     response[0].must_equal 302
     response[1]['Location'].must_equal '/clients'
