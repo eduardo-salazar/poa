@@ -4,7 +4,6 @@ module Web::Controllers::Clients
     expose :clients
     def call(params)
       @clients = ClientRepository.new.create(params[:client])
-
       redirect_to '/clients'
     end
   end

@@ -9,9 +9,9 @@ describe 'Add client' do
     visit 'clients/new'
 
     within 'form#client-form' do
-      fill_in 'name', with: 'New Client'
-      fill_in 'desc', with: 'Description new client'
-      fill_in 'location', with: 'Managua'
+      fill_in 'Name', with: 'New Client'
+      fill_in 'Description', with: 'Description new client'
+      fill_in 'Location', with: 'Managua'
       click_button 'Create'
     end
 
