@@ -5,7 +5,7 @@ describe Folder do
   it 'can be initialised with attributes required' do
     client = Client.new(name: 'Client1', desc: 'Description', location: 'Managua')
     #create folders
-    folder = folder.new(name: 'Economia', desc: 'Curso de economia para parte sur')
+    folder = Folder.new(name: 'Economia', desc: 'Curso de economia para parte sur')
     folder.name.must_equal 'Economia'
   end
 end
